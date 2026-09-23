@@ -1,0 +1,16 @@
+[package]
+name = "rust-lab"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "lab4"
+path = "lab4.rs"
+
+[[bin]]
+name = "test"
+path = "test.rs"
+
+[[bin]]
+name = "kol2"
+path = "kol2.rs"
