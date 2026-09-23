@@ -438,9 +438,421 @@
 //     }
 // }
 
-mod test;
+// mod test;
 
-fn main(){
-    test::kwadrat(5);
-    println!("{}", test::kwadrat(5));
-}
+// fn main(){
+//     test::kwadrat(5);
+//     println!("{}", test::kwadrat(5));
+// }
+
+// fn analizuj_liczbe(mut n: u32) -> (u32, u32) {
+//     let mut suma = 0;
+//     let mut odwrocona = 0;
+
+//     while n > 0 {
+//         let ostatnia_cyfra = n % 10;
+//         suma += ostatnia_cyfra;
+//         odwrocona = (odwrocona * 10) + ostatnia_cyfra;
+//         n /= 10;
+//     }
+
+//     // Użyj while n > 0. 
+//     // Pamiętaj: odwrocona = (odwrocona * 10) + ostatnia_cyfra
+
+//     (suma, odwrocona)
+// }
+
+// enum Status{
+//     DoZrobienia,
+//     WTrakcie,
+//     Zakonczone,
+// }
+
+// struct Zadanie{
+//     tytul: String,
+//     tresc: String,
+//     aktualny_status: Status,
+// }
+
+// struct ListaZadan{
+//     elementy: Vec<Zadanie>,
+// }
+
+// impl ListaZadan{
+//     fn new() -> Self{
+//         ListaZadan{
+//             elementy: Vec::new(),
+//         }
+//     }
+    
+//     fn dodaj_zadanie(&mut self, zadanie: Zadanie){
+//         self.elementy.push(zadanie);
+//     }
+
+//     fn znajdz_zadanie(&self, szukany_tytul: &str) -> Option<&Zadanie>{
+//         for z in &self.elementy {
+//             if z.tytul == szukany_tytul{
+//                 return Some(z);
+//             }
+//         }
+//         None
+//     }
+// }
+
+// fn main(){
+//     let mut lista = ListaZadan::new();
+
+//     lista.dodaj_zadanie(Zadanie{
+//         tytul: String::from("nauka rusta"),
+//         tresc: String::from("powtorzyc petle"),
+//         aktualny_status: Status::DoZrobienia,
+//     });
+
+//     let wynik = lista.znajdz_zadanie("nauka rusta");
+
+//     match wynik{
+//         Some(z) => println!("znalazlem: {}", z.tytul),
+//         None => println!("nie znalazlem zadania"),
+//     }
+// }
+
+// impl Magazyn{
+//     fn new() -> Self{
+//         Magazyn{
+//             towary : Vec::new(),
+//         }
+//     }
+//     fn dodaj_produkt(&mut self, produkt: Produkt ){
+//         self.towary.push(produkt);
+//     }
+// }
+
+// enum Gatunek{
+//     Fantastyka,
+//     Kryminal,
+//     IT,
+// }
+
+// struct Ksiazka{
+//     tytul: String,
+//     autor: String,
+//     gatunek: Gatunek,
+// }
+
+// struct Biblioteka{
+//     ksiazki: Vec<Ksiazka>,
+// }
+
+// impl Biblioteka{
+//     fn new() -> Self{
+//         Biblioteka{
+//             ksiazki: Vec::new(),
+//         }
+//     }
+    
+//     fn dodaj_ksiazke(&mut self, ksiazka: Ksiazka){
+//         self.ksiazki.push(ksiazka);
+//     }
+
+//     fn szukaj_po_tytule(&self, szukany_tytul: &str) -> Option <&Ksiazka>{
+//         for z in &self.ksiazki{
+//             if z.tytul == szukany_tytul{
+//             return Some(z);
+//             }
+//         }
+//         None
+//     }
+// }
+    
+// fn main(){
+//     let mut biblioteka = Biblioteka::new();
+
+//     biblioteka.dodaj_ksiazke(Ksiazka{
+//         tytul: String::from("lalka"),
+//         autor: String::from("prus"),
+//         gatunek: Gatunek::IT,                   
+//     });
+
+//     let wynik = biblioteka.szukaj_po_tytule("lalka");
+
+//     match wynik {
+//         Some(z) => println!("tytul tej ksiazki to: {}", z.tytul),
+//         None => println!("nie znaleziono ksiazki"),
+//     }
+// }
+
+
+// fn sprawdz_pelnoletnosc() -> Result<bool, String>{
+//     let wiek = pobierz_wiek()?;
+
+//     if wiek >= 18 {
+//         Ok(true)
+//     } else {
+//         Ok(false)
+//     }
+
+    
+// }
+
+
+// trait Pojazd{
+//     fn predkosc_max(&self) -> u32;
+// }
+
+// struct Rower;
+
+// impl Pojazd for Rower{
+//     fn predkosc_max(&self) -> u32 {
+//         25
+//     }
+// }
+
+
+// let liczby = vec![5, 12, 8, 20, 3];
+
+// let wynik: Vec<i32> = liczby.iter().filter(|&x| x > 10).map(|x| x + 1).collect();
+
+// use std::ops::Add;
+
+// struct Wynik {
+//     gole_nasze: u32,
+//     gole_ich: u32,
+// }
+
+// impl Add for Wynik{
+//     type Output = Wynik;
+
+//     fn add(self, other: Wynik) -> Wynik{
+//         Wynik{
+//             gole_nasze: self.gole_nasze + other.gole_nasze,
+//             gole_ich: self.gole_ich + other.gole_ich,
+//         }
+//     }
+// }
+
+// fn mniejsza_wartosc<T: PartialOrd>(a: T, b: T) -> T{
+    
+// }
+// use std::ops::Add;
+
+// struct Towar{
+//     nazwa: String,
+//     cena: u32,
+// }
+
+// impl Add for Towar{
+//     type Output = Towar;
+
+//     fn add(self, other: Towar) -> Towar{
+//         Towar{
+//             nazwa: String::from("Zestaw"),
+//             cena: self.cena + other.cena,
+//         }
+//     }
+// }
+
+// struct Koszyk{
+//     lista_zakupow: Vec<Towar>,
+// }
+
+// impl Koszyk{
+//     fn new() -> Self{
+//         Koszyk{
+//             lista_zakupow: Vec::new()
+//         }
+//     }
+
+//     fn dodaj_towar(&mut self, towar: Towar){
+//         self.lista_zakupow.push(towar);
+//     }
+
+//     fn ceny_premium(&self) -> Vec<u32>{
+//         self.lista_zakupow.iter().filter(|t| t.cena > 100).map(|t| t.cena).collect()
+//     }
+// // }
+
+// fn czy_parzysta(liczba: i32) -> bool {
+//     liczba % 2 == 0
+// }
+
+// #[cfg(test)]
+// mod tests{
+//     use super::*;
+
+//     #[test]
+//     fn test_parzystosci(){
+//         assert_eq!(czy_parzysta(4), true);
+//     }
+// }
+
+// trait Figura{
+//     fn pole(&self) -> u32;
+// }
+
+// struct Kwadrat {
+//     bok: u32
+// }
+
+// impl Figura for Kwadrat {
+//     fn pole(&self) -> u32 {
+//         self.bok * self.bok
+//     }
+// }
+
+// struct Prostokat{
+//     a: u32,
+//     b: u32
+// }
+
+// impl Figura for Prostokat{
+//     fn pole(&self) -> u32{
+//         self.a * self.b
+//     }
+// }
+
+// fn main(){
+//     let mut figury: Vec<Box<dyn Figura>> = Vec::new();
+
+//     figury.push(Box::new(Kwadrat{bok: 4}));
+//     figury.push(Box::new(Prostokat{a:2, b:5}));
+
+//     for f in figury{
+//         println!("Pole wynosi: {}", f.pole());
+//     }
+    
+// }
+
+
+// fn suma_kwadratow(n: u32, cache: &mut(u32, u32)) -> u32{
+//     if cache.0 == n{
+//         return cache.1;
+//     }
+//     if n == 0{
+//         return 0;
+//     }
+//     let wynik = n * n + suma_kwadratow(n - 1, cache);
+
+//     cache.0 = n;
+//     cache.1 = wynik;
+
+//     wynik
+// }
+
+// fn ocne_haslo(haslo: &str) -> String{
+//     let dlugosc = haslo.chars().count();
+
+//     let czesc1 = if dlugosc < 8{
+//         "krotkie"
+//     } else if dlugosc <=12 {
+//         "srednie"
+//     } else {
+//         "dlugie"
+//     }
+//     let ma_cyfre = haslo.chars().any(|c| c.is_ascii_digit());
+        
+//     let czesc2 = if ma_cyfre{
+//         "silne"
+//     } else {
+//         "slabe"
+//     };
+
+//     format!("{},{}", czesc1, czesc2)
+// }
+
+// fn szukaj_parzystych(n: u32, k: u32) -> u32{
+//     let mut szukana = n;
+
+//     loop{
+        
+//     }
+// }
+
+// fn main() {
+//     let mut pamiec = (0, 0); 
+//     println!("Liczymy: {}", suma_kwadratow(3, &mut pamiec)); 
+//     println!("Z cache: {}", suma_kwadratow(3, &mut pamiec)); 
+// }
+
+//     println!("{}", ocen_haslo("haslo123")); 
+//     println!("{}", ocen_haslo("krotkie"));
+
+
+// #[derive(Debug)]
+// enum Stan{
+//     Dostepny,
+//     Wypozyczony,
+//     WNaprawie,
+// }
+// #[derive(Debug)]
+// enum Blad{
+//     NieZnaleziono,
+//     NieDostepny,
+//     ZaMlody,
+// }
+
+// struct Pojazd{
+//     nr_rej: String,
+//     rok_produkcji: i32,
+//     stan_pojazdu: Stan
+// }
+
+// struct Flota{
+//     auta: Vec<Pojazd>,
+// }
+
+// impl Flota{
+//     fn new() -> Self {
+//         Self { 
+//             auta: Vec::new() 
+//         } 
+//     }
+    
+//     fn dodaj_pojazd(&mut self, auto: Pojazd){
+//         self.auta.push(auto);
+//     }
+
+//     fn znajdz_mut(&mut self, nr_rej: &str) -> Option<&mut Pojazd>{
+//         self.auta.iter_mut().find(|x| x.nr_rej == nr_rej)
+//     }
+
+//     fn wypozycz(&mut self, nr_rej: &str, wiek: u8) -> Result<(), Blad>{
+//         if wiek < 18{
+//             return Err(Blad::ZaMlody);
+//         }
+//         let auto = self.znajdz_mut(nr_rej).ok_or(Blad:: NieZnaleziono)?;
+
+//         match auto.stan_pojazdu{
+//             Stan::Dostepny => {
+//                 auto.stan_pojazdu = Stan::Wypozyczony;
+//                 Ok(())
+//             }
+//             _ => Err(Blad::NieDostepny),
+//         }
+//     }
+// }
+
+// fn main(){
+//     let mut oscars = Flota::new();
+
+//     oscars.dodaj_pojazd(Pojazd{
+//         nr_rej: String::from("LU996TL"),
+//         rok_produkcji: 2016,
+//         stan_pojazdu: Stan::Dostepny
+//     });
+
+//     oscars.dodaj_pojazd(Pojazd{
+//         nr_rej: String::from("LU812SW"),
+//         rok_produkcji: 2018,
+//         stan_pojazdu: Stan::WNaprawie
+//     });
+
+//     println!("Test 1: {:?}", oscars.wypozycz("LU996TL", 16));
+
+//     println!("Test 2: {:?}", oscars.wypozycz("LU812SW", 22));
+
+//     println!("Test 3: {:?}", oscars.wypozycz("LU112SW", 22));
+
+//     println!("Test 4: {:?}", oscars.wypozycz("LU996TL", 22));
+
+//     println!("Test 5: {:?}", oscars.wypozycz("LU996TL", 22));
+// }
